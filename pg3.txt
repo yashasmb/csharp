@@ -1,0 +1,21 @@
+using System;
+
+class SubstringList
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string inputString = Console.ReadLine();
+
+        Console.WriteLine("\nAll Substrings:");
+
+        for (int i = 0; i < inputString.Length; i++)
+        {
+            for (int j = 1; j <= inputString.Length - i; j++)
+            {
+                string substring = inputString.Substring(i, j);
+                Console.WriteLine(substring);
+            }
+        }
+    }
+}

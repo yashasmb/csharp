@@ -1,0 +1,22 @@
+using System;
+
+class MultipleException {
+    static void Main(String[] args) {
+        int[] number = {8, 17, 24, 5, 25};
+        int[] divisor = {2, 0, 0, 5};
+
+        try {
+            for (int j = 0; j < number.Length; j++) {
+                try {
+                    Console.WriteLine("Number: " + number[j] + "\nDivisor: " + divisor[j] + "\nQuotient: " + number[j] / divisor[j]);
+                } catch (DivideByZeroException e) {
+                    Console.WriteLine("Inner Try Catch Block");
+                    Console.WriteLine("An Exception has occurred : {0}", e.Message);
+                }
+            }
+        } catch (IndexOutOfRangeException e) {
+            Console.WriteLine("Outer Try Catch Block");
+            Console.WriteLine("An Exception has occurred : {0}", e.Message);
+        }
+    }
+} 
